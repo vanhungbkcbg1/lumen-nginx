@@ -1,0 +1,7 @@
+/vendor/
+phpunit.xml
+README.md
+compose.lock
+/docker/
+/docker-production
+/tests
