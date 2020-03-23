@@ -1,7 +1,8 @@
-/vendor/
+/vendor
 phpunit.xml
 README.md
 compose.lock
-/docker/
-/docker-production
-/tests
+/docker
+.editorconfig
+.styleci.yml
+docker-compose.yml
