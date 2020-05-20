@@ -1,0 +1,22 @@
+FROM php:7.3-fpm-alpine
+MAINTAINER Hungnv
+#install php
+RUN apk update --no-cache
+RUN apk add composer
+
+RUN mkdir -p /var/www/html
+
+WORKDIR /var/www/html
+
+# add source to working directory
+ADD . .
+# change permission of storage folder
+RUN chown -R www-data /var/www/html/storage
+# run composer install
+RUN composer install --optimize-autoloader --no-interaction --no-progress
+
+RUN docker-php-ext-install pdo_mysql
+RUN chmod 777 ./command.sh
+RUN chmod +x ./wait-for-it.sh
+
+CMD ["php-fpm","-F","-R"]
