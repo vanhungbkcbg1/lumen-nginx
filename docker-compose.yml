@@ -5,7 +5,7 @@ services:
     image: nginx
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./:/code
+      - ./:/var/www/html
     ports:
       - 80:80
     networks:
@@ -18,9 +18,9 @@ services:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
-    working_dir: /code
+    working_dir: /var/www/html
     volumes:
-      - ./:/code
+      - ./:/var/www/html
     networks:
       - nginx
   mysql:
