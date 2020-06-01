@@ -33,6 +33,7 @@ $router->get("/user-list",function () use ($router){
 });
 
 $router->get('/', function () use ($router) {
+    \Illuminate\Support\Facades\Log::info("hello");
     return $router->app->version();
 });
 

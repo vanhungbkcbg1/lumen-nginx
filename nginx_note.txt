@@ -1,0 +1,12 @@
+gzip khong support cac dinh dang anh,pdf,gif,mp3 nen ko nen config gzip cho cac type nay
+gzip co the duoc khai bao trong http,server, location and if block
+gzip_comp_level nhan gia tri tu 1->9 tuy nhien gia tri tu 1->3 thuong duoc dung,no la gia tri optimized
+neu khai bao lon hon thi se mat nhieu time cho cpu xu li hon
+example to enable gzip on nginx
+
+gzip on;
+gzip_comp_level 2;
+gzip_min_length 1000;
+gzip_types text/js text/css text/plain application/javascript;
+gzip_buffers 16 8k;
+gzip_proxied any;
