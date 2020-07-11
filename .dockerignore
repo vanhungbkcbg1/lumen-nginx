@@ -2,7 +2,6 @@
 phpunit.xml
 README.md
 compose.lock
-/docker
 .editorconfig
 .styleci.yml
 docker-compose.yml

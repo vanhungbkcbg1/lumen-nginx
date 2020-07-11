@@ -22,7 +22,8 @@ $router->get('/new-user', function () use ($router) {
 
     $user=new \App\Model\User();
     $user->name="hungnv";
-    $user->address="Hoang Mai";
+    $user->email="Hoang Mai";
+    $user->password="test";
     $user->save();
     return "user created";
 });
@@ -38,5 +39,20 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post("/upload","UploadController@upload");
+$router->get("/upload","UploadController@index");
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    // Matches "/api/register
+    $router->post('register', 'AuthenticateController@register');
+    // Matches "/api/login
+    $router->post('login', 'AuthenticateController@login');
+
+    // Matches "/api/profile
+    $router->get('profile', 'UserController@profile');
+
+    //match /api/posts
+    $router->post("posts","PostController@store");
+    $router->put("posts/{id}","PostController@update");
+});
 
 

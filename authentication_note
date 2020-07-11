@@ -1,0 +1,39 @@
+$this->app['auth']->viaRequest('api', function ($request) {
+    //this function duoc dung de get thong tin cua user tu api_token
+    if ($request->input('api_token')) {
+        return User::where('api_token', $request->input('api_token'))->first();
+    }
+});
+
+this is a simple example to demo authentication in lumen
+this example use simple mechanism
+  - after user login success to system-> the system generate random token ->update token to database following user email
+  - each request after login have to input api_token to run action
+https://www.cloudways.com/blog/lumen-rest-api-authentication/
+
+authenticate using jwt mechanism
+trong cach lam nay, sau khi user login thanh cong,jwt se tao mot token,trong thong tin payload co chua id cua user login
+khi thuc hien auth check thi sex kiem tra xem id co ton tai trong database hay khong
+trong class LumenServiceProvider trong file bootstrap/app.php co ham extendAuthGuard
+trong ham nay se dinh nghia viec khoi tao Gaurd nhu the nao
+
+protected function extendAuthGuard()
+    {
+        $this->app['auth']->extend('jwt', function ($app, $name, array $config) {
+            $guard = new JWTGuard(
+                $app['tymon.jwt'],
+                $app['auth']->createUserProvider($config['provider']),
+                $app['request']
+            );
+
+            $app->refresh('request', $guard, 'setRequest');
+
+            return $guard;
+        });
+    }
+
+xem them trong ham resolve cua AuthManager
+
+
+install https://jwt-auth.readthedocs.io/en/develop/lumen-installation/
+https://dev.to/ndiecodes/build-a-jwt-authenticated-api-with-lumen-2afm

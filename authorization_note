@@ -1,0 +1,38 @@
+Gates: most applicable for action not relate to model
+-> xu li o tang action
+Policy: should be used when you wish to authorize an action for a particular model or resource
+-> xu li o tang model
+
+
+register
+Gates: duoc dang ki trong AuthServiceProvider
+
+
+phan quen cho admin
+Policy:
+class PostPolicy
+{
+    use HandlesAuthorization;
+    
+    public function before (User $user)
+    {
+        if ($user->role === 'admin') { // nếu user có id === 'admin' thì là supper admin
+             return true;
+        }
+    }
+}
+voi Gate:
+public function boot()
+{
+    $this->registerPolicies();
+
+    Gate::before(function ($user) {
+        if ($user->role === 'admin') { // nếu user có id === 'admin' thì là supper admin
+                return true;
+        }
+    });
+}
+
+
+vidu
+https://allaravel.com/blog/phan-quyen-nguoi-dung-voi-laravel-authorization
