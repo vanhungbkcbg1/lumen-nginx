@@ -13,6 +13,8 @@ class AuthenticateController extends Controller
 {
     public function __construct()
     {
+//        $this->middleware("auth",["except"=>["register","login"]]);
+        $this->middleware("jwt.auth",["except"=>["register","login"]]);
     }
     public function register(Request $request){
         $this->validate($request,[
@@ -45,5 +47,10 @@ class AuthenticateController extends Controller
             return response()->json(["message"=>"email or password invalid"],404);
         }
         return  $this->respondWithToken($token);
+    }
+
+    public function refresh(){
+        $token=Auth::refresh();
+//        return $this->respondWithToken($token);
     }
 }

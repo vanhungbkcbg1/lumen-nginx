@@ -34,6 +34,19 @@ protected function extendAuthGuard()
 
 xem them trong ham resolve cua AuthManager
 
+refreshflow:check xem refresh token da het han chua
+public function validateRefresh($refreshTTL)
+  {
+      if ($this->isPast($this->getValue() + $refreshTTL * 60)) {
+          throw new TokenExpiredException('Token has expired and can no longer be refreshed');
+      }
+  }
+cua class IssuedAt
+
+khi thuc hien refresh token thi he thong se check xem token nay co refresh duoc hay khong(dua vao thoi gian setting refresh token)
+neu da expired thi ban ra loi
+
+khi thuc hien login thi se check thong tin payload xem token con dung khong
 
 install https://jwt-auth.readthedocs.io/en/develop/lumen-installation/
 https://dev.to/ndiecodes/build-a-jwt-authenticated-api-with-lumen-2afm
