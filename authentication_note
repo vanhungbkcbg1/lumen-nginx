@@ -43,8 +43,13 @@ public function validateRefresh($refreshTTL)
   }
 cua class IssuedAt
 
-khi thuc hien refresh token thi he thong se check xem token nay co refresh duoc hay khong(dua vao thoi gian setting refresh token)
+khi thuc hien refresh token thi he thong se check xem token nay co refresh duoc hay 
+khong(dua vao thoi gian setting refresh token)
 neu da expired thi ban ra loi
+
+nhu vay tymon/jwt thuc hien co che  la truyen chinh access token len de refresh token
+neu vuot qua thoi gian co the refresh thi la loi
+tinh nang blackListenable=true de chanh truong hop dung lai token de refresh(truong hop bi hack token)
 
 khi thuc hien login thi se check thong tin payload xem token con dung khong
 

@@ -14,7 +14,7 @@ class AuthenticateController extends Controller
     public function __construct()
     {
 //        $this->middleware("auth",["except"=>["register","login"]]);
-        $this->middleware("jwt.auth",["except"=>["register","login"]]);
+        // $this->middleware("jwt.auth",["except"=>["register","login"]]);
     }
     public function register(Request $request){
         $this->validate($request,[
@@ -50,7 +50,12 @@ class AuthenticateController extends Controller
     }
 
     public function refresh(){
-        $token=Auth::refresh();
-//        return $this->respondWithToken($token);
+        try {
+            $token=Auth::refresh();
+            return $this->respondWithToken($token);
+        } catch (\Exception $e) {
+            return \response()->json(["message"=>"fresh token expired"],401);
+        }
+        
     }
 }
