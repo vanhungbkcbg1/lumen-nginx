@@ -34,7 +34,8 @@ protected function extendAuthGuard()
 
 xem them trong ham resolve cua AuthManager
 
-refreshflow:check xem refresh token da het han chua
+refreshflow:check xem refresh token da het han chua,trong phan khoi tao cua Payload,
+validate duoc thuc hien trong ham make cuar jwtAuth/factory
 public function validateRefresh($refreshTTL)
   {
       if ($this->isPast($this->getValue() + $refreshTTL * 60)) {
@@ -43,7 +44,7 @@ public function validateRefresh($refreshTTL)
   }
 cua class IssuedAt
 
-khi thuc hien refresh token thi he thong se check xem token nay co refresh duoc hay 
+khi thuc hien refresh token thi he thong se check xem token nay co refresh duoc hay
 khong(dua vao thoi gian setting refresh token)
 neu da expired thi ban ra loi
 

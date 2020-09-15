@@ -54,8 +54,8 @@ class AuthenticateController extends Controller
             $token=Auth::refresh();
             return $this->respondWithToken($token);
         } catch (\Exception $e) {
-            return \response()->json(["message"=>"fresh token expired"],401);
+            return \response()->json(["message"=>"refresh token expired"],401);
         }
-        
+
     }
 }
