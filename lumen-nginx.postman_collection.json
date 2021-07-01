@@ -1,0 +1,144 @@
+{
+	"id": "a776b8c3-1f77-1fd8-0a2c-9d37f876725a",
+	"name": "lumen-nginx",
+	"description": "",
+	"order": [
+		"5d26c2cc-ba8d-015e-4438-af8b16659c6c",
+		"29c74766-6f3a-7b39-0f61-42b81ca1ac41",
+		"8e028545-698e-83c7-6619-e90567948d59"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1625045118365,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "29c74766-6f3a-7b39-0f61-42b81ca1ac41",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE2MjUwNzE0NjgsImV4cCI6MTYyNTA3MTUyOCwibmJmIjoxNjI1MDcxNDY4LCJqdGkiOiI1bEE0NjNudEtJYkRLVHJhIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1H8VhFTQTKlNgGN8mD4L8RjESKJX3WkyVPZy74sc3No\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE2MjUwNzE0NjgsImV4cCI6MTYyNTA3MTUyOCwibmJmIjoxNjI1MDcxNDY4LCJqdGkiOiI1bEE0NjNudEtJYkRLVHJhIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1H8VhFTQTKlNgGN8mD4L8RjESKJX3WkyVPZy74sc3No",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost/api/posts",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "hello",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "body",
+					"value": "api post",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1625071488443,
+			"name": "new post",
+			"description": "",
+			"collectionId": "a776b8c3-1f77-1fd8-0a2c-9d37f876725a",
+			"responses": []
+		},
+		{
+			"id": "5d26c2cc-ba8d-015e-4438-af8b16659c6c",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost/api/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "pv2@allaravel.dev",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1625070364302,
+			"name": "login",
+			"description": "",
+			"collectionId": "a776b8c3-1f77-1fd8-0a2c-9d37f876725a",
+			"responses": []
+		},
+		{
+			"id": "8e028545-698e-83c7-6619-e90567948d59",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE2MjUwNzE0NjgsImV4cCI6MTYyNTA3MTUyOCwibmJmIjoxNjI1MDcxNDY4LCJqdGkiOiI1bEE0NjNudEtJYkRLVHJhIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1H8VhFTQTKlNgGN8mD4L8RjESKJX3WkyVPZy74sc3No\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE2MjUwNzE0NjgsImV4cCI6MTYyNTA3MTUyOCwibmJmIjoxNjI1MDcxNDY4LCJqdGkiOiI1bEE0NjNudEtJYkRLVHJhIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1H8VhFTQTKlNgGN8mD4L8RjESKJX3WkyVPZy74sc3No",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost/api/posts",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "hello",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "body",
+					"value": "api post",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1625071488443,
+			"name": "Test New Post with custom user resolved",
+			"description": "",
+			"collectionId": "a776b8c3-1f77-1fd8-0a2c-9d37f876725a",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "29c74766-6f3a-7b39-0f61-42b81ca1ac41"
+		}
+	]
+}
