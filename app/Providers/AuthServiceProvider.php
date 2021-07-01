@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Policies\ApiPostPolicy;
 use App\Policies\PostPolicy;
 use App\Post;
 use App\User;
@@ -51,5 +52,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define("posts.create",PostPolicy::class."@create");
         Gate::define("posts.update",PostPolicy::class."@update");
         Gate::define("posts.delete",PostPolicy::class."@delete");
+
+        Gate::define("api.posts.create",ApiPostPolicy::class."@create");
+        Gate::define("api.posts.update",ApiPostPolicy::class."@update");
+        Gate::define("api.posts.delete",ApiPostPolicy::class."@delete");
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
-class PostController extends Controller
+class ApiPostController extends Controller
 {
 
     public function __construct()
@@ -17,7 +17,7 @@ class PostController extends Controller
 
     //
     public function store(Request $request){
-        if(Gate::denies("posts.create")){
+        if(Gate::denies("api.posts.create")){
             return "not allow";
         }
         $data = $request->only('title', 'body');
@@ -29,7 +29,7 @@ class PostController extends Controller
 
     public function update(Request $request,$id){
         $post=Post::find($id);
-        if(Gate::denies("posts.update",$post)){
+        if(Gate::denies("api.posts.update",$post)){
             return "not allow";
         }
         $data = $request->only('title', 'body');

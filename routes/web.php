@@ -54,6 +54,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     //match /api/posts
     $router->post("posts","PostController@store");
     $router->put("posts/{id}","PostController@update");
+
+    //for test custom user resolved
+    $router->post("custom_posts","ApiPostController@store");
 });
 
 

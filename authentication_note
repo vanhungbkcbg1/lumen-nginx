@@ -32,7 +32,22 @@ protected function extendAuthGuard()
         });
     }
 
+trong controller Authenticate có gọi tới hàm Auth::attempt
+hàm trên sẽ gọi tới hàm call của class AuthManager -> gaurd() ->gọi vào hàm call back của hàm extendAuthGuard -> khởi tạo jwt guard tương ứng
 xem them trong ham resolve cua AuthManager
+
+trong middleware của tymon có dùng tới auto dependency injection
+trong đó có class \Tymon\JWTAuth\Contracts\Providers\Auth được alias bởi tymon.jwt.provider.auth
+được định nghia trong hàm register alias of \Tymon\JWTAuth\Providers\AbstractServiceProvider
+măt khác hàm registerAuthProvider lại định nghia khởi tạo cho key tymon.jwt.provider.auth như thế nào
+
+trong file config của tymon có định nghĩa providers.auth tới class Tymon\JWTAuth\Providers\Auth\Illuminate
+trong constructor của class trên có dependency tới Illuminate\Contracts\Auth\Guard
+mà Illuminate\Contracts\Auth\Guard lại được định nghia trong alias trong method \Laravel\Lumen\Application::registerContainerAliases
+viec resolve de lay instance Illuminate\Contracts\Auth\Guard là hàm registerAuthBindings với key là auth.driver
+
+
+
 
 refreshflow:check xem refresh token da het han chua,trong phan khoi tao cua Payload,
 validate duoc thuc hien trong ham make cuar jwtAuth/factory
